@@ -29,3 +29,10 @@ post ('/brands') do
     erb(:errors)
   end
 end
+
+post ('/store') do
+  store_name = params.fetch("store_name")
+  @store = Store.create({:name => store_name})
+
+  redirect(back)
+end
