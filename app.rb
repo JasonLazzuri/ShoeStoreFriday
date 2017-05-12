@@ -49,11 +49,15 @@ post ('/store/:id/brands') do
   redirect(back)
 end
 
-
-
 patch('/store/:id/edit/') do
   @store = Store.find(params.fetch('id').to_i())
   name = params.fetch("name")
   @store.update({:name => name})
   redirect(back)
+end
+
+delete('/store/:id') do
+  @store = Store.find(params.fetch('id').to_i())
+  @store.delete()
+  erb(:index)
 end
