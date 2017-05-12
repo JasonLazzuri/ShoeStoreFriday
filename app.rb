@@ -34,6 +34,7 @@ post ('/store') do
   store_name = params.fetch("store_name")
   @store = Store.new({:name => store_name})
   if @store.save()
+
   redirect(back)
   else
     erb(:store_errors)
