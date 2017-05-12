@@ -1,0 +1,32 @@
+<h2> <%= @store.name() %></h2>
+<hr>
+
+<% if @store.brands.any? %>
+  <h3>Here are the brands currently in this store:</h3>
+  <ul>
+    <% @store.brands.each() do |middle| %>
+      <li><%= middle.name %></li>
+    <% end %>
+  </ul>
+
+<% else %>
+
+    <p><strong>There are currently no brands assigned to this project.</strong></p>
+    <br>
+
+<% end %>
+
+
+<p>Add an brand to this store:<p>
+<form id="add_brand_id" action="/stores/<%= @store.id() %>/brands" method="post">
+  <input type="hidden" name="store_id" id="store_id" value="<%= @store.id() %>">
+  <label for="brand_id">Select an brand:  </label>
+    <br>
+  <select id="brand_id" name="brand_id">
+    <option value=""></option>
+    <% @brands.each() do |brand| %>
+      <option value="<%= brand.id() %>"><%= brand.name() %></option>
+    <% end %>
+  </select>
+  <button type="submit">Submit</button>
+</form>
