@@ -18,7 +18,7 @@
 
 
 <p>Add an brand to this store:<p>
-<form id="add_brand_id" action="/stores/<%= @store.id() %>/brands" method="post">
+<form id="add_brand_id" action="/store/<%= @store.id() %>/brands" method="post">
   <input type="hidden" name="store_id" id="store_id" value="<%= @store.id() %>">
   <label for="brand_id">Select an brand:  </label>
     <br>
