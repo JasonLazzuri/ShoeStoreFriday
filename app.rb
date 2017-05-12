@@ -48,3 +48,16 @@ post ('/store/:id/brands') do
   @store.brands.push(brand)
   redirect(back)
 end
+
+
+
+patch ('store/:id/edit') do
+  recipe = Recipe.find(params['recipe_id'].to_i())
+  instruction = Instruction.find(params['instruction_id'].to_i())
+  step = params["step"]
+  if instruction.update({:step => step})
+    redirect(back)
+  else
+    erb :errors
+  end
+end

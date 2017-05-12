@@ -30,3 +30,11 @@
   </select>
   <button type="submit">Submit</button>
 </form>
+
+<h3> Update a Store Name: </h3>
+ <form class="form-group" action="/store/<%= @store.id() %>/edit/" method="post">
+   <input type="hidden" name="_method" value="patch">
+   <label for="name">Change Store name to:</label>
+   <input type="text" name="name" required>
+   <button type="submit">Update Store Name</button>
+ </form>
