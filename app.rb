@@ -22,6 +22,10 @@ end
 post ('/brands') do
   brand_name = params.fetch('brand_name')
   brand_price = params.fetch('brand_price')
-  @brands = Brand.create({:name => brand_name, :price =>brand_price})
+  @brands = Brand.new({:name => brand_name, :price =>brand_price})
+  if @brands.save()
   redirect("/brands")
+  else
+    erb(:errors)
+  end
 end
