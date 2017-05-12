@@ -33,6 +33,11 @@ end
 post ('/store') do
   store_name = params.fetch("store_name")
   @store = Store.create({:name => store_name})
-
   redirect(back)
+end
+
+get ('/store/:id') do
+  @store = Store.find(params.fetch("id").to_i())
+  @brands = Brand.all()
+  erb(:store)
 end
