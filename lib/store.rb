@@ -10,6 +10,6 @@ class Store < ActiveRecord::Base
 
   private
     define_method(:upcase_name)do
-      self.name = (name().capitalize!())
+      self.name = name().split.each(){|word| word.capitalize!}.join(' ')
   end
 end

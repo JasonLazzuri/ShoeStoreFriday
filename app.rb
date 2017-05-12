@@ -32,8 +32,12 @@ end
 
 post ('/store') do
   store_name = params.fetch("store_name")
-  @store = Store.create({:name => store_name})
-  redirect(back)
+  @store = Store.new({:name => store_name})
+  if @store.save()
+  redirect("/store")
+  else
+    erb(:store_errors)
+  end
 end
 
 get ('/store/:id') do
