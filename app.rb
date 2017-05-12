@@ -51,13 +51,9 @@ end
 
 
 
-patch ('store/:id/edit') do
-  recipe = Recipe.find(params['recipe_id'].to_i())
-  instruction = Instruction.find(params['instruction_id'].to_i())
-  step = params["step"]
-  if instruction.update({:step => step})
-    redirect(back)
-  else
-    erb :errors
-  end
+patch('/store/:id/edit/') do
+  @store = Store.find(params.fetch('id').to_i())
+  name = params.fetch("name")
+  @store.update({:name => name})
+  redirect(back)
 end
