@@ -20,10 +20,9 @@
 <p>Add an brand to this store:<p>
 <form id="add_brand_id" action="/store/<%= @store.id() %>/brands" method="post">
   <input type="hidden" name="store_id" id="store_id" value="<%= @store.id() %>">
-  <label for="brand_id">Select an brand:  </label>
+  <label for="brand_id">Select a brand:  </label>
     <br>
   <select id="brand_id" name="brand_id">
-    <option value=""></option>
     <% @brands.each() do |brand| %>
       <option value="<%= brand.id() %>"><%= brand.name() %></option>
     <% end %>

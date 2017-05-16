@@ -13,7 +13,7 @@
 
   <% @brands.each() do |brand| %>
 
-  <li><%= brand.name %> $<%= brand.price %>0</li>
+  <li> <%= brand.name %> $<%= brand.price %>0</li>
 
   <% end %>
 
@@ -23,8 +23,8 @@
 
 <h3> Add an brand: </h3>
 <form action="/brands" method="post">
-  <label for="brand_name">Brand Name:  </label>
-  <input type="text" name="brand_name" placeholder="Name" id="brand_name">
+  <label for="name"> Brand Name:  </label>
+  <input type="text" name='brand_name' placeholder="Name" >
   <input type="text" name="brand_price" placeholder="Price" id="brand_price">
   <button type="submit">Add Brand + Price</button>
 </form>
