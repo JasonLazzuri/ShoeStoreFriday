@@ -1,0 +1,28 @@
+#bootstrap-overrides {
+  background-color: lightgrey;
+
+}
+
+#pic img{
+  width: 1080px;
+}
+
+#welcome{
+  position: absolute;
+  top: 150px;
+  left: 680px;
+  font-family: cursive;
+  font-size: 70px;
+}
+
+#front {
+  width: 1080px;
+}
+#sign {
+  width: 1000px;
+  padding-left: 100px;
+}
+
+#brands{
+  width: 500px;
+}
